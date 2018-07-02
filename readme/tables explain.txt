@@ -1,0 +1,178 @@
+
+//......INSTALLING THE DB TALBELS.........
+
+1.Install Wampserver or Xampsever.
+2.find SQL file name payroll.sql
+3.Open it and highlit it by pressing CTL+A to copy all.
+4.Go to phpmyadmin and on the tab named SQL.click it and in the textarea, past it
+and hit go.IT will create the database and tables for you.
+
+Done!!
+
+
+
+//.......INTERPRETATION OF THE DB TALBES......
+
+The database payroll contains 8 tables
+
+
+1.admin table : contains admistrator username and password login details
+
+2.emplog table:	contains employee username and password login details
+
+3.managerlog table: contains manager username and password login details
+
+4.company table:  contains company setting details
+
+5.inbox table: contains inbox content details
+
+6. outbox table: contains sent messages content details
+
+7.employee tabel: contains employee details 
+
+8.payroll table: contains payment details of employees
+............................................................
+Note : Don't be confused with the payroll table and database named payroll...it works , it does not matter.
+............................................................
+
+......................................................................................
+//.....DATA TYPES FOR admin TABLE
+
+adminId:	int(11)
+empId:		int(11)
+username:	varchar(50)  //varchar(50) means the field accept only 50 chareacters
+password:	varchar(50)
+activate:	int(11)
+
+//This data types applies to emplog and managerlog
+.......................................................................................
+
+
+//All the tables also use int(11) to store integer values varchar to store characters
+
+
+NOTE :
+........................................................
+when you go to phpmyadmin and when you select a table ...then click on the tab called structure  and you will get to know the DATA TYPES USED...that one will give you more hint
+
+
+................OR BETTER STILL...................
+find below the creation of the various tables with data types
+
+
+.....BELOW IS THE CREATION OF THE TABLES
+...................................................................
+..........ADMIN TABLE.......
+
+CREATE TABLE  `admin` (
+  `adminId` int(11) NOT NULL AUTO_INCREMENT,
+  `empId` int(11) NOT NULL,
+  `username` varchar(50) COLLATE ascii_bin NOT NULL,
+  `password` varchar(50) COLLATE ascii_bin NOT NULL,
+  `activate` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`adminId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=ascii COLLATE=ascii_bin AUTO_INCREMENT=2 ;
+
+
+...................................................................
+.......COMPANY TABLE.....
+
+CREATE TABLE `company` (
+  `compId` int(11) NOT NULL AUTO_INCREMENT,
+  `compName` varchar(255) COLLATE ascii_bin NOT NULL,
+  `address` varchar(255) COLLATE ascii_bin NOT NULL,
+  `registrationNo` varchar(100) COLLATE ascii_bin NOT NULL,
+  `numberOfEmp` int(11) NOT NULL,
+  `levelOne` int(11) NOT NULL,
+  `levelTwo` int(11) NOT NULL,
+  `levelThree` int(11) NOT NULL,
+  `levelFour` int(11) NOT NULL,
+  `levelFive` int(11) NOT NULL,
+  PRIMARY KEY (`compId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=ascii COLLATE=ascii_bin AUTO_INCREMENT=2 ;
+
+
+.......................................................................
+..............EMPLOG TABLE..............
+
+CREATE TABLE `emplog` (
+  `empLogId` int(11) NOT NULL AUTO_INCREMENT,
+  `empId` int(11) NOT NULL,
+  `username` varchar(50) COLLATE ascii_bin NOT NULL,
+  `password` varchar(50) COLLATE ascii_bin NOT NULL,
+  `activate` tinyint(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`empLogId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=ascii COLLATE=ascii_bin AUTO_INCREMENT=9 ;
+
+.............................................................................
+
+...............EMPLOYEE TABLE.................
+
+CREATE TABLE `employee` (
+  `empId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE ascii_bin NOT NULL,
+  `phone` int(10) NOT NULL,
+  `email` varchar(50) COLLATE ascii_bin NOT NULL,
+  `level` int(10) NOT NULL,
+  `designation` varchar(100) COLLATE ascii_bin NOT NULL,
+  PRIMARY KEY (`empId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=ascii COLLATE=ascii_bin AUTO_INCREMENT=9 ;
+
+..................................................................................
+...................INBOX TABLE...........
+
+CREATE TABLE `inbox` (
+  `inboxId` int(11) NOT NULL AUTO_INCREMENT,
+  `empId` int(11) NOT NULL,
+  `username` varchar(255) COLLATE ascii_bin NOT NULL,
+  `title` varchar(255) COLLATE ascii_bin NOT NULL,
+  `content` longtext COLLATE ascii_bin NOT NULL,
+  `viewed` enum('0','1') COLLATE ascii_bin NOT NULL DEFAULT '0',
+  `recievedDate` varchar(255) COLLATE ascii_bin NOT NULL,
+  PRIMARY KEY (`inboxId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=ascii COLLATE=ascii_bin AUTO_INCREMENT=66 ;
+
+......................................................................................
+...............MANAGERLOG TABLE...............
+
+CREATE TABLE`managerlog` (
+  `managerId` int(11) NOT NULL AUTO_INCREMENT,
+  `empId` int(11) NOT NULL,
+  `username` varchar(50) COLLATE ascii_bin NOT NULL,
+  `password` varchar(50) COLLATE ascii_bin NOT NULL,
+  `activate` int(11) NOT NULL,
+  PRIMARY KEY (`managerId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=ascii COLLATE=ascii_bin AUTO_INCREMENT=2 ;
+
+.....................................................................................
+................OUTBOX TABLE........................
+
+CREATE TABLE `outbox` (
+  `outboxId` int(11) NOT NULL AUTO_INCREMENT,
+  `empId` int(11) NOT NULL,
+  `username` varchar(255) COLLATE ascii_bin NOT NULL,
+  `title` varchar(255) COLLATE ascii_bin NOT NULL,
+  `content` longtext COLLATE ascii_bin NOT NULL,
+  `sendDate` varchar(255) COLLATE ascii_bin NOT NULL,
+  PRIMARY KEY (`outboxId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=ascii COLLATE=ascii_bin AUTO_INCREMENT=121 ;
+
+...........................................................................................
+...............PAYROLL TABLE...................
+
+CREATE TABLE `payroll` (
+  `payrollId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE ascii_bin NOT NULL,
+  `empId` int(11) NOT NULL,
+  `date` varchar(255) COLLATE ascii_bin NOT NULL,
+  `basicSalary` int(11) NOT NULL,
+  `numOfLeaves` int(11) NOT NULL,
+  `salaryPerDay` int(11) NOT NULL,
+  `deduction` int(11) NOT NULL,
+  `netSalary` int(11) NOT NULL,
+  PRIMARY KEY (`payrollId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=ascii COLLATE=ascii_bin AUTO_INCREMENT=90 ;
+
+
+
+

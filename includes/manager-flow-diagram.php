@@ -1,0 +1,4 @@
+ <img src="images/flowchart2.png" alt="Payroll Flowchart" width="875" height="520" usemap="#Map" />
+ <map name="Map"><area shape="circle" coords="746,399,65" href="employees-salary-report.php" target="_self" alt="View Salary Report"><area shape="circle" coords="419,399,65" href="pay-employee.php" target="_self" alt="Manage Salary"><area shape="circle" coords="99,396,65" href="#" target="_self" alt="Department "><area shape="circle" coords="744,217,65" href="#" target="_self" alt="Attendance"><area shape="circle" coords="421,222,65" href="#" target="_self" alt="Employees"><area shape="circle" coords="97,219,65" href="companysetting.php" target="_self" alt="Company Settings">
+   <area shape="circle" coords="420,66,61" href="manage-company.php" target="_self">
+ </map>

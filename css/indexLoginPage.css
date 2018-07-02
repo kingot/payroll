@@ -1,0 +1,256 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+payroll management system css desing
+*/
+/*
+******************************************
+###########################################
+index login page 
+###########################################
+
+*/
+
+
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+
+
+body{
+	margin:0;
+	padding:0;
+	background:#6698FF;
+	font: 100% Georgia, "Times New Roman", Times, serif;
+}
+
+.container_currency{
+	width:860px;
+	margin:auto;
+	background:#e9ebdf;
+	padding-left:15px;
+	padding-bottom:15px;
+	background-image:url(../images/payroll.png);
+	background-repeat:no-repeat;
+	min-height:600px;
+}
+
+#containerMainLogin {
+width: 100%;
+line-height: 18px;
+text-align: left;
+}
+
+#bottom {
+width: 100%;
+opacity: 0;
+clear: left;
+padding-top: 6px;
+min-height: 350px;
+}
+
+#loginform {
+margin: 0 auto;
+width: 330px;
+margin-top:-213px;
+background:#e9ebdf;
+border:2px outset #263974;
+}
+
+#loginform a:link{
+color:blue;
+}
+
+#loginform a:visited{
+color:blue;
+}
+
+
+#loginform table {
+width: 100%;
+}
+
+
+.loginform {
+margin: 0 auto;
+width: 400px;
+margin-top: 115px;
+background:#e9ebdf;
+border:2px outset #263974;
+}
+
+.loginform table {
+width: 100%;
+}
+
+.loginheader {
+border-bottom: 2px solid #263974;
+padding-bottom: 8px !important;
+float: left;
+width: 100%;
+margin-bottom: 10px;
+}
+.loginheader h3 {
+font-size: 20px;
+float: left;
+color:#ff7f14;
+padding:0;
+margin:0;
+}
+.loginheader a {
+float: right;
+text-align: right;
+color:#ff7f14;
+}
+
+/*   error style   */
+.error{
+	height:auto;
+	width:400px;
+}
+
+.error ul li{
+	list-style-image:url(../images/list.png);
+	list-style-position:inside;
+	padding:5px;
+	margin:0;
+	background:#D5973C;
+}
+
+
+.error li{
+padding:3px;
+margin:15px 0px 15px 0px;
+color:#FFFFFF;
+background:#red;
+position:inherit;
+float:none;
+height:auto;
+}
+
+.pa {
+	text-align:center;
+padding:3px;
+margin:1px 0px 15px 0px;
+color:#FFFFFF;
+background-color:#FF9999;
+}
+
+
+h3{
+	color:#666;
+	padding:5px;
+	margin:2px;
+	border-bottom:1px solid #999;
+}
+
+#loginform td {
+padding: 5px 5px;
+line-height: 14px;
+}
+
+#loginform .field {
+width: 170px;
+color: #4A7496;
+padding-top:5px;
+padding-bottom:5px;
+font-size:16px;
+}
+
+
+#loginform .submit {
+width: 60px;
+color: #4A7496;
+padding-top:5px;
+font-size:16px;
+}
+
+
+
+.loginform td {
+padding: 5px 5px;
+line-height: 14px;
+}
+
+.loginform .field {
+width: 170px;
+color: #4A7496;
+padding-top:5px;
+padding-bottom:5px;
+font-size:16px;
+}
+
+
+.loginform .submit {
+width: 60px;
+color: #4A7496;
+padding-top:5px;
+font-size:16px;
+}
+
+
+
+
+
+
+
+#loginform select {
+width: 170px;
+color: #4A7496;
+padding-top:5px;
+padding-bottom:5px;
+font-size:16px;
+}
+
+#loginform .errormess {
+color: #AA3939;
+padding: 0 0 5px;
+text-align: center;
+}
+
+.text{
+	font-size:14px;
+	font-weight:bold;
+	color:#4A7496;;
+	font-family:Verdana, Geneva, sans-serif;
+	padding:0;
+	margin:0;
+}
+
+.under{
+	border-bottom: 2px solid #263974;
+	padding-bottom: 8px !important;
+	margin:0;
+}
+
+
+.li{
+padding:3px;
+margin:15px 0px 15px 0px;
+color:#FFFFFF;
+background-color:#FF9999;
+width:310px;
+}
+/*.pa {
+padding:3px;
+margin:15px 0px 15px 0px;
+color:#FFFFFF;
+background-color:#FF9999;
+width:310px;
+}*/
+
+ul{
+	list-style:none;
+	padding:5px;
+	margin:0;
+}
